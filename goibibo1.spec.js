@@ -1,0 +1,37 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.goibibo.com/');
+  await page.getByRole('link', { name: 'Trains' }).click();
+  await page.getByRole('combobox', { name: 'From' }).click();
+  //await page.getByLabel('FromPopular Searches / StationsNDLS - New Delhi Railway StationDelhi, DelhiSBC - Bangalore City JunctionBangalore, KarnatakaCSTM - Mumbai Cst Railway StationMumbai, MaharashtraBSB - Varanasi JunctionVaranasi, Uttar PradeshALD - Allahabad JunctionAllahabad, Uttar Pradesh').fill('sc');
+  await page.getByRole('combobox', { name: 'From' }).fill('SC');
+  await page.getByText('Hyderabad, Telangana').first().click();
+  await page.getByRole('combobox', { name: 'To' }).click();
+  //await page.getByLabel('ToPopular Searches / StationsNDLS - New Delhi Railway StationDelhi, DelhiSBC - Bangalore City JunctionBangalore, KarnatakaCSTM - Mumbai Cst Railway StationMumbai, MaharashtraBSB - Varanasi JunctionVaranasi, Uttar PradeshALD - Allahabad JunctionAllahabad, Uttar Pradesh').fill('vskp');
+  await page.getByRole('combobox', { name: 'To' }).fill('VSKP');
+  await page.locator('#autosuggest').getByText('Visakhapatnam Railway Station').click();
+  await page.getByText('Sat, 10 Dec 22').click();
+  await page.getByText('31').nth(1).click();
+  await page.getByRole('button', { name: 'Search Trains' }).click();
+  await page.getByText('AVL 527').click();
+  await page.locator('label').nth(1).click();
+  await page.getByPlaceholder('Enter IRCTC User ID').click();
+  await page.getByPlaceholder('Enter IRCTC User ID').fill('SaiGiri18');
+  await page.getByRole('button', { name: 'Check ID' }).click();
+  await page.getByRole('button', { name: '+ Add travellers' }).click();
+  await page.getByPlaceholder('Enter Name').click();
+  await page.getByPlaceholder('Enter Name').fill('SampleDmeo');
+  await page.getByPlaceholder('Enter Age').click();
+  await page.getByPlaceholder('Enter Age').fill('21');
+  await page.locator('.addTrvlrMdl__drpDwnIcnWrp').click();
+  await page.locator('.radioOuter > label').first().click();
+  await page.locator('.addTrvlrMdl__drpDwnIcnUp').click();
+  await page.getByRole('button', { name: 'Save' }).click();
+  await page.locator('.cntctDtlsComp__inpWrap').first().click();
+  await page.getByPlaceholder('Enter Mobile Number').fill('9848022338');
+  await page.getByPlaceholder('Enter Email Address').click();
+  await page.getByPlaceholder('Enter Email Address').fill('sampledemo@yopmail.com');
+  await page.locator('label').filter({ hasText: 'Do you want to take Travel Insurance (₹0.35/person)?' }).click();
+  await page.getByRole('button', { name: 'Book now' }).click();
+});
