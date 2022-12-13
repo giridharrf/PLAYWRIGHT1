@@ -27,6 +27,4 @@ test('test', async ({ page }) => {
   await page.locator('input[class="button-1 payment-info-next-step-button"]').click();
   await page.locator('#checkout-step-confirm-order').click();
   await page.getByRole('button', { name: 'Confirm' }).click();
-  await page.getByRole('button', { name: 'Confirm' }).click();
-
 });
