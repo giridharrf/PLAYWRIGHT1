@@ -6,14 +6,15 @@ test('holiday homes', async ({ page }) => {
   await page.getByRole('search').filter({ hasText: 'Nearby' }).getByPlaceholder('Where to?').fill('goa');
   await page.getByRole('option', { name: 'Goa India, Asia' }).click();
   await page.getByRole('list').filter({ hasText: 'BardezCandolimCalanguteArporaColvaBenaulimAnjunaCanaconaGoa VelhaVagator' }).getByRole('link', { name: 'Candolim' }).click();
-  await page.locator('#CHECKIN_PICKER').click();
-  await page.getByRole('gridcell', { name: 'Fri Dec 30 2022' }).click();
-  await page.getByRole('gridcell', { name: 'Sat Dec 31 2022' }).click();
+  await page.goto('https://www.tripadvisor.in/VacationRentals-g297605-Reviews-Candolim_Bardez_North_Goa_District_Goa-Vacation_Rentals.html')
+  await page.locator('.duUGc').first().click();
+  await page.getByRole('rowgroup').filter({ hasText: '282930123456789101112131415161718192021222324252627282930311' }).getByRole('gridcell', { name: '30 December 2022' }).click();
+  await page.getByRole('rowgroup').filter({ hasText: '282930123456789101112131415161718192021222324252627282930311' }).getByRole('gridcell', { name: '31 December 2022' }).click();
   const [page1] = await Promise.all([
     page.waitForEvent('popup'),
    page.locator('.qhYuW > div:nth-child(2) > .rmyCe').first().click()
-
   ]);
+  await page1.getByRole('button', { name: 'Book Now' }).click();
 });
 test('things to do',async ({page})=>{
   await page.goto('https://www.tripadvisor.in/');
