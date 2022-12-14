@@ -28,6 +28,7 @@ test('things to do',async ({page})=>{
   ]);
   await page1.goto('https://www.tripadvisor.in/AttractionProductReview-g1584785-d21137179-Full_Day_Tour_Old_Goa_Dudhsagar_Falls_and_Spice_Plantation-Ponda_North_Goa_Distri.html');
   await page1.locator('section').filter({ hasText: 'Full viewAll photos (27)LIKELY TO SELL OUT*Full-Day Tour Old Goa Dudhsagar Falls' }).getByRole('button', { name: 'Check availability' }).click();
+  await
   await page1.getByRole('dialog').getByRole('button', { name: 'Reserve Now' }).click();
 });
 test('looking for restaurent', async ({ page }) => {
@@ -37,4 +38,6 @@ test('looking for restaurent', async ({ page }) => {
     await page.getByRole('option', { name: 'Goa India, Asia' }).click();
     await page.locator('.zjwAK > a').first().click();
     await page.getByRole('link', { name: 'Read more' }).click();
+    await page.getByRole('link', { name: 'Metrics' }).click();
+
   });
