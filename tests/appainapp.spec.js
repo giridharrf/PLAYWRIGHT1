@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-
 test('Patient Registration Form', async ({ page }) => {
   await page.goto('https://feujidemo.appiancloud.com/suite/sites/patient-onboarding/page/home');
   await page.getByPlaceholder('Username').click();
