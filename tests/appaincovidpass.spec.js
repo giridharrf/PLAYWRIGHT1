@@ -1,26 +1,26 @@
 import { test, expect } from '@playwright/test';
 
-// test('testing for profile update', async ({ page }) => {
-//   await page.goto('https://feujidemo.appiancloud.com/suite/sites/patient-onboarding/page/home');
-//   await page.getByPlaceholder('Username').click();
-//   await page.getByPlaceholder('Username').fill('saigiridhar.rv@feuji.com');
-//   await page.getByPlaceholder('Password').click();
-//   await page.getByPlaceholder('Password').fill('Sai@#54321');
-//   await page.getByRole('button', { name: 'Sign In' }).click();  
-//   await page.getByRole('button', { name: 'Navigation' }).click();
-//   const [page1] = await Promise.all([
-//     page.waitForEvent('popup'),
-//     page.getByText('COVID-19 Campus Pass').click()
-//   ]);
-//   await page1.getByRole('link', { name: 'Profile Profile Profile' }).click();
-//   await page1.waitForTimeout(3000);
-//   await page1.getByRole('listbox', { name: 'RoleRequired asterisk' }).click();
-//   await page1.getByRole('link', { name: 'Clear value' }).click();
-//   await page1.getByText('Student').click();
-//   await page1.getByRole('listbox', { name: 'Which of the following best describes your COVID-19 vaccination status?' }).click();
-//   await page1.getByText('Partially vaccinated and awaiting more doses').click();
-//   await page1.getByRole('button', { name: 'Update' }).click();
-// });
+test('testing for profile update', async ({ page }) => {
+  await page.goto('https://feujidemo.appiancloud.com/suite/sites/patient-onboarding/page/home');
+  await page.getByPlaceholder('Username').click();
+  await page.getByPlaceholder('Username').fill('saigiridhar.rv@feuji.com');
+  await page.getByPlaceholder('Password').click();
+  await page.getByPlaceholder('Password').fill('Sai@#54321');
+  await page.getByRole('button', { name: 'Sign In' }).click();  
+  await page.getByRole('button', { name: 'Navigation' }).click();
+  const [page1] = await Promise.all([
+    page.waitForEvent('popup'),
+    page.getByText('COVID-19 Campus Pass').click()
+  ]);
+  await page1.getByRole('link', { name: 'Profile Profile Profile' }).click();
+  await page1.waitForTimeout(3000);
+  await page1.getByRole('listbox', { name: 'RoleRequired asterisk' }).click();
+  await page1.getByRole('link', { name: 'Clear value' }).click();
+  await page1.getByText('Student').click();
+  await page1.getByRole('listbox', { name: 'Which of the following best describes your COVID-19 vaccination status?' }).click();
+  await page1.getByText('Partially vaccinated and awaiting more doses').click();
+  await page1.getByRole('button', { name: 'Update' }).click();
+});
 
 test('Reporting an incident', async ({ page }) => {
     await page.goto('https://feujidemo.appiancloud.com/suite/sites/patient-onboarding/page/home');
@@ -68,20 +68,20 @@ test('Reporting an incident', async ({ page }) => {
     await page.getByRole('button', { name: 'Report Incident' }).click();
   });
 
-  // test('campus search', async ({ page }) => {
-  //   await page.goto('https://feujidemo.appiancloud.com/suite/sites/patient-onboarding/page/home');
-  //   await page.getByPlaceholder('Username').click();
-  //   await page.getByPlaceholder('Username').fill('saigiridhar.rv@feuji.com');
-  //   await page.getByPlaceholder('Password').click();
-  //   await page.getByPlaceholder('Password').fill('Sai@#54321');
-  //   await page.getByRole('button', { name: 'Sign In' }).click();
-  //   await page.getByRole('button', { name: 'Navigation' }).click();
-  //   const [page1] = await Promise.all([
-  //     page.waitForEvent('popup'),
-  //     page.getByText('COVID-19 Campus Pass').click()
-  //   ]);
-  //   await page1.getByRole('link', { name: 'Campuses Campuses Campuses' }).click();
-  //   await page1.getByPlaceholder('Search Campuses').click();
-  //   await page1.getByPlaceholder('Search Campuses').fill('main');
-  //   await page1.getByRole('button', { name: 'Search' }).click();
-  // });
+  test('campus search', async ({ page }) => {
+    await page.goto('https://feujidemo.appiancloud.com/suite/sites/patient-onboarding/page/home');
+    await page.getByPlaceholder('Username').click();
+    await page.getByPlaceholder('Username').fill('saigiridhar.rv@feuji.com');
+    await page.getByPlaceholder('Password').click();
+    await page.getByPlaceholder('Password').fill('Sai@#54321');
+    await page.getByRole('button', { name: 'Sign In' }).click();
+    await page.getByRole('button', { name: 'Navigation' }).click();
+    const [page1] = await Promise.all([
+      page.waitForEvent('popup'),
+      page.getByText('COVID-19 Campus Pass').click()
+    ]);
+    await page1.getByRole('link', { name: 'Campuses Campuses Campuses' }).click();
+    await page1.getByPlaceholder('Search Campuses').click();
+    await page1.getByPlaceholder('Search Campuses').fill('main');
+    await page1.getByRole('button', { name: 'Search' }).click();
+  });
