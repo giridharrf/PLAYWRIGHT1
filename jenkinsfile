@@ -24,8 +24,8 @@ stages{
     stage('test'){
         steps{
          sh '''
-          npx playwright test --list
-          npx playwright test
+          npx playwright tests --list
+          npx playwright tests
         '''
         }
     }
